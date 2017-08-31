@@ -42,29 +42,6 @@ class Agente:
                 self.finalizado = 1
                 self.marcado = 0
 
-    def marcarRuta(self, x, y):
-        print(self.ambiente[x][y])
-        if self.ambiente[x+1][y] == (self.valor -1):
-            self.ambiente[x+1][y] = str(self.ambiente[x+1][y]) + "*"
-            self.valor = self.valor - 1
-            marcarRuta(x+1,y,valor-1)
-        if self.ambiente[x-1][y] == (self.valor -1):
-            self.ambiente[x-1][y] = str(self.ambiente[x-1][y]) + "*"
-            self.valor = self.valor - 1
-            marcarRuta(x+1,y,valor-1)
-        if self.ambiente[x][y+1] == (self.valor -1):
-            self.ambiente[x][y+1] = str(self.ambiente[x][y+1]) + "*"
-            self.valor = self.valor - 1
-            marcarRuta(x+1,y,valor-1)
-        if self.ambiente[x+1][y] == (self.valor -1):
-            self.ambiente[x+1][y] = str(self.ambiente[x+1][y]) + "*"
-            self.valor = self.valor - 1
-            marcarRuta(x+1,y,valor-1)
-        if self.ambiente[x][y] == 1:
-            self.ambiente[x][y] = "1*"
-            self.imprimir()
-
-
 def introducirCoordenadas(ambiente, mensaje):
         y = int(input("Introduce la posicion x " + mensaje + ": "))
         x = int(input("Introduce la posicion y " + mensaje + ": "))
@@ -96,11 +73,8 @@ def main():
             agente.recorrerAmbiente()
             print("")
             agente.imprimir()
-        agente.imprimirPDF()
-        #while agente.valor != 1:
-            #agente.marcarRuta(yFinal, xFinal)
-        #print("")
-        #print("Programa finalizado")
+        print("")
+        print("Programa finalizado")
 
 if __name__ == "__main__":
     main()
